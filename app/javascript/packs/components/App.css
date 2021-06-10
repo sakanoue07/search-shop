@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: rgb(1, 1, 1);
+}
+
+select {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+  color: rgb(1, 1, 1);
+}
+
+input:focus {
+  outline: 0;
+}

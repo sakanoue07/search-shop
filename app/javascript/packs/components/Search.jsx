@@ -8,7 +8,7 @@ import { toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 toast.configure();
 
-// 検索エラー
+// 検索エラーポップ
 const ErrorRange = () => {
   toast.error("範囲を指定してください", {
     hideProgressBar: true,
@@ -70,6 +70,7 @@ const Select = styled.select`
   cursor: pointer;
 `;
 function Search() {
+  // range 半径 reload 検索ボタンを押したか
   const [range, setRange] = useState("");
   const [reload, setLeload] = useState(false);
   const dispatch = useDispatch();
@@ -87,6 +88,7 @@ function Search() {
       .post(
         "/api/v1/search",
         {
+          // lat: 緯度,lon: 経度
           loca: {
             lat: pos.coords.latitude,
             lon: pos.coords.longitude,

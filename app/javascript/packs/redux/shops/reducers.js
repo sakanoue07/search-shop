@@ -1,5 +1,6 @@
 import * as Actions from "./actions";
 import { initialState } from "../store/initialState";
+// 全ての店の情報
 export const ShopsReducer = (state = initialState.shops, action) => {
   switch (action.type) {
     case Actions.GET_SHOPS:
@@ -12,6 +13,7 @@ export const ShopsReducer = (state = initialState.shops, action) => {
   }
 };
 
+// 一つの店の情報
 export const OneShopsReducer = (state = initialState.oneShop, action) => {
   switch (action.type) {
     case Actions.ONE_SHOP:

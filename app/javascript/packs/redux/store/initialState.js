@@ -1,3 +1,4 @@
+// 初期値 shops: すべて onShop:１つ
 export const initialState = {
   shops: {
     id: [],

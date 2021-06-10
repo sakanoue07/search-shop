@@ -75,10 +75,12 @@ const Button = styled.p`
   }
 `;
 function Shops({ reload }) {
+  // loadIndex: 一度に読み込むshop数 isEnpty: buttonのdisable
   const [loadIndex, setLoadIndex] = useState(10);
   const [isEmpty, setIsEmpty] = useState(false);
   const dispatch = useDispatch();
 
+  // shops全ての情報の取得
   const shops_id = useSelector((state) => state.ShopsReducer.id);
   const shops_name = useSelector((state) => state.ShopsReducer.name);
   const shops_logo_image = useSelector(
@@ -92,11 +94,15 @@ function Shops({ reload }) {
   const shops_open = useSelector((state) => state.ShopsReducer.shop_open);
   const shops_url = useSelector((state) => state.ShopsReducer.url);
   const shops_address = useSelector((state) => state.ShopsReducer.address);
+
+  // 再検索されるとloadIndex,isEmptyを初期値に戻す
   useEffect(() => {
     console.log(reload);
     setIsEmpty(false);
     setLoadIndex(10);
   }, [reload]);
+
+  // 更に表示ボタン
   const displayMore = () => {
     if (loadIndex < shops_length) {
       if (loadIndex + 10 > shops_length) {
